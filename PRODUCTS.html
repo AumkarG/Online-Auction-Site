@@ -1,0 +1,424 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   			<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+			<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			<link rel="stylesheet" href="/resources/demos/style.css">
+		<STYLE>
+			ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+		body {	
+				    		
+			background: linear-gradient(to right, #33ccff 17%, #0066cc 56%);	
+		}
+    
+			 .nav_bar{
+					 position: sticky;
+					 top:0px;
+					 border-radius:15px;
+				 }
+
+
+                           .nav_bar li{
+						     display: inline;
+					     }
+					     .nav_bar li a{
+		                           color:white;
+								   text-decoration: none;
+				         }
+						 .dropbtn {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  color: black;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-content a {color:black;}
+
+.dropdown-content a:hover {background-color: gray;
+color:white;}
+
+.dropdown:hover .dropdown-content {display: block;
+color:black;}
+
+.dropdown:hover .dropbtn {background-color: gray;}
+ #popup {
+	 display:none;
+	 position: fixed;
+	 width:400px;
+	 height:225px;
+	 top: 175px;
+	 bottom:50px;
+	 left:450px;
+	 border:5px solid black;
+	 background-color:lightblue;
+ }
+
+	      
+
+	 h1{
+		  background-image :linear-gradient(to right, yellow , green);
+		   border-radius:15px;
+		   padding:5px;
+		     margin-bottom:5px;
+		   text-align:center; 
+	    }  
+	  
+				     ul.products img{
+					     border:5px solid black;
+				     }
+				     div.sidebar{
+					     float:left;
+					     width: 400px;
+					     height : 580px;
+					     background-color:lightgray;
+					     opacity:50%;
+					     margin:15px;
+					     margin-top:5px;
+				     }
+				     div.gallery{
+					     margin : 5px;
+					     border:2px solid lightgray;
+					     width: 235px;
+					     float:left;
+				     }
+				     div.gallery:hover{
+					     border:2px solid black;
+
+				     }
+				     div.gallery img{
+					     width:100%;
+					     height:250px;
+				     }
+				     div.desc{
+					     text-align:center;
+					     padding: 5px;
+					     background-color:gray;
+							 color:white;
+				     }
+				     .part{
+						     font-size:14px;
+					    width:23%;
+					    display:inline-block;
+	    
+					      }
+				     .part a
+				     {
+					     text-decoration:none;
+				     }
+				     .part a :visited
+				     {
+					     text-decoration:none;
+				     }
+				     .part a:hover
+				     {
+					     text-decoration:underline;
+				     }
+	          
+</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+  } );
+  </script>
+	</head>
+	<body>
+			<script src="js/jquery-1.11.3.min.js"></script>
+    		<script src="js/bootstrap.min.js"></script>
+				<h1 id="hd"> ONLINE AUCTION <small> SYSTEM</small> </h1>
+				<div id="popup">
+					<img src="cross.jpg" onclick="document.getElementById('popup').style.display='none'" style="position:absolute;top:0px;right:0px;width:20px;height:20px">
+					<img src="" id="in_img" style="width:200px;height:225px;float:left">
+					<div id="pop_d" style="float:right;width:200px">
+							<span style="left:100px">
+							<BR>
+							<BR>
+							&nbsp &nbsp TIME LEFT : <span id="time"></span>
+								<br>
+								<br>
+						 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp PRICE : <span id="price"></span>				
+							<BR>
+							</span>
+							 <BR>
+							 <BR>
+							&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<button id="myButton" style="background-color:gold">BID NOW</button>
+							 <BR>
+							 <BR>
+							&nbsp &nbsp &nbsp &nbsp &nbsp <button id="myButton" style="background-color:gold"><a href="DETAILS.html" style="text-decoration:none">VIEW DETAILS</a></button>
+					</div>
+					
+			
+					</div>
+									
+				
+				<script type="text/javascript">
+					document.getElementById("myButton").onclick = function () {
+							location.href = "DETAILS.html";
+					};
+			</script>
+		    
+           
+				
+				<ul class="nav_bar" style="background-color:black;color:white;margin:0px;padding:15px;">
+				    <li><a href="WTL.html"> Home</a>
+
+					</li>
+					&nbsp &nbsp
+					<li>
+						<div class="dropdown">
+							<button class="dropbtn">All Departments</button>
+							<div class="dropdown-content">
+							  <a href="#" >
+								  Antiques</a>
+							  <a href="#">Paintings</a>
+							  <a href="#">Jewelry</a>
+							  <a href="#">Accessories</a>
+							  </div> </div></li>
+					&nbsp &nbsp
+					<li>
+							<div class="dropdown">
+								<button class="dropbtn">Vehicles</button>
+								<div class="dropdown-content">
+								  <a href="#" >
+									  Cars and Trucks</a>
+								  <a href="" onlick="">Boats and Planes</a>
+								  <a href="">Parts and accesories</a>
+								  <a href="#">Dirt Bikes</a>
+								  </div> </div>
+				   </li>
+					&nbsp &nbsp
+					<li>
+							<div class="dropdown">
+								<button class="dropbtn">Books</button>
+								<div class="dropdown-content">
+								  <a href="#" >
+									  Classics</a>
+								  <a href="#">Comics</a>
+								  <a href="#">Poetry</a>
+								  <a href="#">Ancient</a>
+								  <a href="#">Religious</a>
+								  </div> </div>
+				   </li>
+					&nbsp &nbsp
+					<li>
+							<div class="dropdown">
+								<button class="dropbtn">Art</button>
+								<div class="dropdown-content">
+								  <a href="#" >
+									  Classics</a>
+								  <a href="#">Comics</a>
+								  <a href="#">Poetry</a>
+								  <a href="#">Ancient</a>
+								  <a href="#">Religious</a>
+								  </div> </div>
+				   </li>
+					&nbsp &nbsp
+					<li>
+							<div class="dropdown">
+								<button class="dropbtn">Jewelry</button>
+								<div class="dropdown-content">
+								  <a href="#" >
+									  Classics</a>
+								  <a href="#">Comics</a>
+								  <a href="#">Poetry</a>
+								  <a href="#">Ancient</a>
+								  <a href="#">Religious</a>
+								  </div> </div>
+				   </li>
+					&nbsp &nbsp
+					<li> Art</li>
+					&nbsp &nbsp
+					<li><input type=text style="background-image:url(search.png);background-repeat:no-repeat;background-size:30px 20px;padding: 3px 20px 3px 40px" placeholder="Search"></li>
+					<li style="float:right;padding:16px"><a href="login.html">Login</a></li> 
+					&nbsp &nbsp
+
+					<li style="float:right;padding:16px"><a href="login.html">Create Account</a></li>
+				</ul>
+			
+		<p id="draggable" style="font-family:georgia,garamond,serif;font-size:16px;font-style:italic;text-align: center;color: black"><br>This is the list of products for sale in this auction<br> We have the best collection of antiques and collectibles in Asia.</p>
+		<br>
+			<div class="sidebar" style="text-align:center">
+				<h2 style="text-align:center">FILTERS</h2>
+				<BR>
+				<BR>
+				<BR>
+				<button> GO  </button>
+			    <BR>
+				<BR>
+				<BR>
+					PRICE : <select >
+					<option value="High">High to Low</option>
+					<option value="Low">Low to High</option>
+					
+				  </select>
+
+				  <BR>
+				  <BR>
+				  <BR>
+			      <BR>
+				  VENDORS <select >
+						<option value="ALL">ALL</option>
+						<option value="High">Vendor A</option>
+						<option value="Low">Vendor B</option>
+						
+					  </select>
+			</div>
+            <div >
+		    <div class="gallery">
+				<img id="1" onclick="func(this.src,this.id)" src="https://target.scene7.com/is/image/Target/53025998?wid=328&hei=328&qlt=80&fmt=pjpeg">
+				<div class="desc">
+					 Vase
+					</div>
+					</div>
+			<div class="gallery">
+				<img id="2" onclick="func(this.src,this.id)" src="https://d2qs8jo5daq3wi.cloudfront.net/photos/245138/full/IMG_20170824_224942.jpg?1508151128">
+				<div class="desc">
+					Painting
+				</div>
+			</div>
+			<div class="gallery" >
+				<img id="3"  class="IMG" src="gold_idol.jpg" onclick="func(this.src,this.id)">
+				<div class="desc">
+            Ancient idol
+				</div>
+				
+			</div>
+	    	<div class="gallery">
+				<img  id="4" src="https://www.english-heritageshop.org.uk/imagprod/imaglarg/black-prince-sword.jpg" onclick="func(this.src,this.id)">
+		    <div class="desc">
+
+				Sword
+			</div>
+			</div>
+			<div class="gallery">
+			<img  id="5" onclick="func(this.src,this.id)" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSaaWD0r0rAI8vA8D4bve6hbFoCw6GIn8IX52dBUvJnvlnmQna">
+			<div class="desc">
+				   Crockery
+			
+				</div>
+			</div>																													
+			<div class="gallery" >
+					<img id="6" src="https://images-na.ssl-images-amazon.com/images/I/71mjkZTd8rL._UY395_.jpg" onclick="func(this.src,this.id)">
+					<div class="desc">
+						   Pearl Bracelet
+					</div>
+			</div>	
+			<div class="gallery" >
+					<img id="3"  class="IMG" src="https://ccnwordpress.blob.core.windows.net/journal/2017/11/32chryslimpdwphaeton.jpg" onclick="func(this.src,this.id)">
+					<div class="desc">
+					Vintage Car
+					</div>
+					
+				</div>
+				<div class="gallery" >
+						<img id="3"  class="IMG" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/BatmanComicIssue1%2C1940.png/250px-BatmanComicIssue1%2C1940.png" onclick="func(this.src,this.id)">
+						<div class="desc">
+						Batman issue 1
+						</div>
+						
+					</div>
+			</div>
+			<br>
+			
+			<script>
+					function func(s,id){
+						document.getElementById('popup').style.display="block";
+						document.getElementById('in_img').src=s;
+						var ind=parseInt(id,10);
+						var arr_time=["21 days","11 days 11 hr","10 days 4 hr","17 days 3hr","5 days 1 hr","12 days 2 hr"];
+						var arr_price=["$240","$345","$120","$290","$1100","$710"];
+						document.getElementById('price').innerHTML=arr_price[ind-1];
+						document.getElementById('time').innerHTML=arr_time[ind-1];
+
+
+
+					}
+					
+
+			   </script>
+		
+          <div class="footer" style="background-image: linear-gradient(to right, cyan, blue);padding: 5px;display:block;clear:left">
+	             <div class="part"><b> About Us </b>
+                 <br>
+                       <a href="">Company</a>
+                 <br>
+                       <a> Blog</a>
+                 <br>
+	                   <a>Our Team</a>
+                 <br>
+	                   <a>Partners</a>
+                 </div> 
+                <div class="part"><b>Our Policy</b>
+                <br>
+                       <a>User Agreement</a>
+                <br>
+	                   <a>Privacy Policy</a>
+                <br>
+                       <a>Return Policy</a>
+                <br>
+                       <a>Intellectual Policy</a>
+                </div> 
+                <div class="part"><b>Help</b>
+                <br>
+                       <a>Safety and Security</a>
+                <br>
+                       <a> Contact us</a>
+                <br>
+                       <a> Shipping</a>
+                <br> 
+                       <a>FAQ</a>
+                </div>
+                <div class="part">
+					   Use of PropertyRoom.com website and its affiliates constitutes acceptance of the User Agreement. 
+					   Copyright � Auction System, Inc. All Rights Reserved.
+                </div>
+        </div>
+	</body>
+</html>

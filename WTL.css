@@ -1,0 +1,54 @@
+.col-sm-3{
+ display:inline-block;
+font-size:14px;
+}
+h1{
+ background-image: linear-gradient(to right, yellow , green);
+padding:5px;
+margin:0px;   
+
+}
+a:link{
+   background-color:black;
+   text-decoration:none;
+   color:white;
+   padding:5px;
+   border: 2px solid white;
+   float:right;
+ 
+}
+a:visited{
+   color:white;
+   background-color:black;
+
+   border: 2px solid white;
+ 
+}
+a:hover{
+   color:white;
+   background-color:gray;
+
+   border: 2px solid white;
+}
+NAME : &nbsp &nbsp<input type="text" name="name1">
+<br>
+<br>
+CITY:
+&nbsp &nbsp &nbsp &nbsp<input type="text" name="city1">
+<br>
+<br>
+<span>PH. NUM:</span>
+&nbsp<input type="NUM" name="phone">
+<br>
+<br>
+EMAIL ID:
+<input type="text" name="email">
+<br>
+<br>
+PASSWORD:<input type="text" name="pass2">
+<br>
+<br>
+CONFIRM PASSWORD :<input type="text" name="cpass">
+<br>
+<br>
+<input type=submit style="width:60px">

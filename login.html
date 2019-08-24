@@ -1,0 +1,231 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(".btn1").click(function(){
+            var str = $(".part").text();
+            alert(str);
+        });
+    });
+    </script>   
+  <style>
+    #fb {
+      width: 46px;
+      height: 44px;
+      background: url(sprites.png) 0 0;
+    }
+
+    #twitter {
+      width: 46px;
+      height: 44px;
+      background: url(sprites.png) 230px 0;
+    }
+
+    #insta {
+      width: 46px;
+      height: 44px;
+      background: url(sprites.png) 460px 0;
+    }
+
+    .botlink :link {}
+
+    .botlink:visited {}
+
+    .botlink:hover {
+      text-decoration: underline;
+    }
+
+    .top:link {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+    }
+
+    .top:visited {
+      background-color: black;
+      color: white;
+    }
+
+    .top:hover {
+      background-color: gray;
+      color: white;
+    }
+
+    form {
+      width: 50%;
+    }
+
+    .part {
+      display: inline-block;
+      vertical-align: top;
+      width: 400px;
+      border: 20px solid green;
+      padding: 25px;
+      margin: 25px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+
+      .part,
+      .log {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+      }
+
+      body {
+        background-color: cyan;
+      }
+
+      ::selection {
+        color: hotpink;
+      }
+  </style>
+
+  </head>
+
+  <body>
+    <h1 style="background-image: linear-gradient(to right, cyan , blue);padding:15px;margin:0px;text-align:center"><a
+        class="top" style="float:left" href="WTL.html">BACK</a>AUCTION SYSTEM </h1>
+            <script>
+      function validateLogin() {
+        var x = document.forms["f1"]["fname"].value;
+        if (x == "") {
+          window.alert("Name must be filled out");
+          return false;
+        }
+        var y = document.forms["f1"]["pass"].value;
+        if (y == "") {
+          window.alert("Password must be filled out");
+          return false;
+        }
+      }
+      function validateRegister() {
+        var r_name = document.forms["f2"]["name1"].value;
+        if (r_name == "") {
+          window.alert("Name field is compulsory");
+        }
+        var r_city = document.forms["f2"]["city1"].value;
+        if (r_city == "") {
+          window.alert("City field is compulsory");
+        }
+        var r_phone = document.forms["f2"]["phone"].value;
+        if (r_phone == "") {
+          window.alert("Phone number field is compulsory");
+        }
+      }
+      function change() {
+        document.getElementById('para').style.fontSize = '100px';
+      }
+    </script>
+    <form class="log" name="f1"
+      style="background-color:rgb(240,240,240);display:inline-block;height:500px;text-align:center"
+      onsubmit="validateLogin()">
+      <br>
+      <br>
+      <br>
+      <SPAN style="font-size:20px"><b>LOGIN</b></span>
+      <br>
+      <br>
+      <br>
+      <br>
+      USER ID : <input type="text" name="fname">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      PASSWORD :
+      <input type="text" name="pass">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <input type=submit style="width:60px">
+      <br>
+      <br>
+      <a href="" style="text-decoration:underline">Forgot Password?</a></form>
+    <form class="log" name="f2"
+      style="background-color:rgb(180,180,180);display:inline-block;float:right;height:500px;text-align:center"
+      onsubmit="validateRegister()">
+      <br>
+      <br>
+      <SPAN style="font-size:20px"><b>DON'T HAVE AN ACCOUNT? SIGN UP.</b></span>
+      <BR>
+      <BR>
+      NAME : &nbsp &nbsp<input type="text" name="name1">
+      <br>
+      <br>
+      CITY:
+      &nbsp &nbsp &nbsp &nbsp<input type="text" name="city1">
+      <br>
+      <br>
+      <span>PH. NUM:</span>
+      &nbsp<input type="NUM" name="phone">
+      <br>
+      <br>
+      <br>
+      EMAIL ID:
+      <input type="text" name="email">
+      <br>
+      <br>
+      <br>
+      PASSWORD:<input type="text" name="pass2">
+      <br>
+      <br>
+      <br>
+      CONFIRM PASSWORD :<input type="text" nmae="cpass">
+      <br>
+      <br>
+      <br>
+      <input type=submit style="width:60px">
+    </form>
+    <!--<img id="fb" src="sprites.png" width="1" height="1"><br><br>
+<img id="twitter" src="sprites.png" width="1" height="1"><br><br>
+<img id="insta" src="sprites.png" width="1" height="1">-->
+<br>
+<button type="button" class="btn1" style="text-align:center">GET FOOTER TEXT</button>
+    <div style="background-image: linear-gradient(to right, cyan, blue);padding: 15px">
+      <div class="part"><b> About Us </b>
+        <br>
+        <a class="botlink">Company</a>
+        <br>
+        <a class="botlink">Blog</a>
+        <br>
+        <a class="botlink">Our Team</a>
+        <br>
+        <a class="botlink">Partners</a>
+      </div>
+      <div class="part"><b>Our Policy</b>
+        <br>
+        <a class="botlink">User Agreement</a>
+        <br>
+        <a class="botlink">Privacy Policy</a>
+        <br>
+        <a class="botlink">Return Policy</a>
+        <br>
+        <a class="botlink">Intellectual Policy</a>
+      </div>
+      <div class="part"><b>Help</b>
+        <br>
+        <a class="botlink">Safety and security</a>
+        <br>
+        <a class="botlink">Contact us</a>
+        <br>
+        <a class="botlink">Shipping</a>
+        <br>
+        <a class="botlink">FAQ</a>
+      </div>
+      <div class="part"><b>Copyright</b><br>
+        Use of PropertyRoom.com website and its affiliates constitutes acceptance of the User Agreement. Copyright �
+        1999 - 2019 PropertyRoom.com, Inc. All Rights Reserved.
+      </div>
+    </div>
+  </body>
+
+</html>
